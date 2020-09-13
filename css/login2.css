@@ -1,0 +1,367 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.container {
+  background-image: url(../bg/bg6.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: auto;
+  animation: crazy 1s ease-in-out 1s;
+}
+@keyframes crazy {
+  from {
+    width: 0vw;
+    height: 0vh;
+    border-radius: 50%;
+  }
+  to {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+.smallcontainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 96%;
+  height: 100%;
+}
+.message {
+  color: #ffffff;
+  padding: 1%;
+  font-size: 3em;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  width: 5%;
+  min-width: 295px;
+  text-align: center;
+  font-family: Helvetica;
+  margin-right: 4%;
+  border: 5px #f4f4f4 dashed;
+  border-radius: 25px;
+  transition: width 0.75s ease-in-out, background-color 1.5s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: now 1.35s ease-in-out 0.65s;
+  opacity: 0;
+}
+@keyframes now {
+  from {
+    opacity: 0;
+    transform: scale(2);
+    border: none;
+    border-radius: 0;
+  }
+  25% {
+    border-radius: 25px;
+    border: 7px solid #fd9c97;
+    outline: 5px dashed #ffffff;
+    outline-offset: -25px;
+    box-shadow: 1px 1px 15px 25px #ffffff;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+    border: 7px solid #c5e9e5;
+    color: #e73c7e;
+    border-radius: 0;
+  }
+  75% {
+    border-radius: 25px;
+    border: 7px solid #fd9c97;
+    outline: 5px dashed #ffffff;
+    outline-offset: +25px;
+    box-shadow: 1px 1px 10px 20px #ffffff;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    border: 5px #f4f4f4 dashed;
+    border-radius: 25px;
+  }
+}
+.form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column wrap;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    -45deg,
+    #c5e9e5,
+    #23a6d5,
+    #e73c7e,
+    #fec7c4,
+    #c5e9e5
+  );
+  background-size: 400% 400%;
+  animation: Gradient 3s ease -2.75s infinite alternate backwards,
+    loader2 1s ease-in-out 0.25s;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 1px 1px 30px 5px #fd9c97;
+  transition: width 1.25s ease 0.5s, height 1.25s ease 0.5s,
+    border-radius 1.25s ease 0.5s;
+}
+@keyframes loader2 {
+  from {
+    border-radius: 50%;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+  }
+  to {
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+}
+.smallform {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column wrap;
+  background-color: #f4f4f4;
+  width: 97%;
+  height: 90%;
+  border-radius: 25px;
+  transition: width 1s ease, height 1s ease, border-radius 1s ease;
+}
+.full {
+  background-color: transparent;
+  width: 100%;
+  height: 5%;
+  transition: height 1s ease;
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+input[type="text"] {
+  background-image: url("../icons/user.png");
+  margin-top: 5%;
+  transition: width 0.75s ease-in-out 0.25s;
+}
+input[type="password"] {
+  background-image: url("../icons/key.png");
+  transition: width 0.5s ease-in-out 0.25;
+}
+input[type="text"],
+input[type="password"] {
+  background-repeat: no-repeat;
+  background-position: 3% center;
+  background-color: #ffffff;
+  display: block;
+  padding-left: 20px;
+  width: 85%;
+  height: 11%;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: height 1s ease-in-out;
+}
+button {
+  width: 50%;
+  height: 10%;
+  cursor: pointer;
+  background-color: #23a5d5d3;
+  color: #ffffff;
+  border-radius: 25px;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.2rem;
+  font-weight: bolder;
+  display: block;
+  transition: width 0.7s ease-in-out, background-color 0.5s ease-in-out,
+    border 0.25s ease-in-out;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border: 2px solid #23a5d5d3;
+}
+button:hover {
+  background-color: white;
+  color: #23a5d5d3;
+  border: 2px solid #23a5d5d3;
+}
+.bigform {
+  width: 22%;
+  height: 44%;
+  min-width: 325px;
+  min-height: 381px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  opacity: 0;
+}
+.overlap {
+  position: fixed;
+  width: 100%;
+  height: 0%;
+  background-color: #000000;
+  z-index: 1;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.anothersomething {
+  width: 80%;
+  height: 80%;
+  background-color: #c5e9e5;
+}
+.loginbutton {
+  position: relative;
+  border-radius: 25px;
+  width: 20%;
+  height: 10%;
+  background: linear-gradient(-45deg, #e73c7e, #23a6d5);
+  background-size: 200% 200%;
+  animation: NewGradient 2s ease infinite alternate backwards;
+}
+@keyframes NewGradient {
+  0% {
+    background-position: -12.5% -12.5%;
+  }
+  25% {
+    background-position: 50% 25%;
+  }
+  50% {
+    background-position: 150% 50%;
+  }
+  75% {
+    background-position: 50% 25%;
+  }
+  100% {
+    background-position: -12.5% -12.5%;
+  }
+}
+.fan1 {
+  width: 75%;
+  height: 100%;
+  background-color: #000000;
+  z-index: 2;
+  position: absolute;
+  left: 12.5%;
+  border-radius: 25px;
+  animation: clockwise 2s ease-in infinite alternate backwards;
+}
+.fan2 {
+  width: 100%;
+  height: 75%;
+  background-color: #000000;
+  z-index: 3;
+  position: absolute;
+  top: 12.5%;
+  border-radius: 25px;
+  animation: anticlockwise 3s ease-out infinite forwards;
+}
+.fan3 {
+  width: 100%;
+  height: 75%;
+  background-color: #000000;
+  z-index: 4;
+  position: absolute;
+  top: 12.5%;
+  border-radius: 20px;
+  animation: random 2.5s ease-in-out infinite backwards;
+}
+.fan4 {
+  width: 95%;
+  height: 85%;
+  background-color: #000000;
+  z-index: 5;
+  position: absolute;
+  top: 7.5%;
+  left: 2.5%;
+  border-radius: 25px;
+  animation: morethanrandom 1s ease-in-out infinite alternate forwards;
+}
+h2 {
+  position: absolute;
+  color: #ffffff;
+  text-align: center;
+  z-index: 5;
+  top: 30%;
+  left: 26%;
+}
+@keyframes clockwise {
+  from {
+    transform: scaleX(1.25) rotateZ(45deg);
+  }
+  to {
+    transform: scaleX(0.75) rotateZ(-45deg);
+  }
+}
+@keyframes anticlockwise {
+  from {
+    transform: scaleX(0.5) rotateZ(90deg);
+  }
+  to {
+    transform: scaleX(1.5) rotateZ(-90deg);
+  }
+}
+
+@keyframes random {
+  from {
+    transform: scaleX(0.5) rotateZ(0deg);
+  }
+  to {
+    transform: scaleX(2) rotateZ(-360deg);
+  }
+}
+@keyframes morethanrandom {
+  from {
+    transform: scale(1, 1.1);
+  }
+  to {
+    transform: scale(1.1, 1);
+  }
+}
+.growinsize {
+  animation: goup 1.5s ease-in-out forwards;
+}
+@keyframes goup {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
